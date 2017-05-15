@@ -1,0 +1,32 @@
+# src /BlogBundle/Resources/config/routing.yml
+BlogBundle_homepage:
+    path:     /
+    defaults: { _controller: "BlogBundle:Page:index" }
+    requirements:
+         methods:  GET
+
+BlogBundle_about:
+   path:   /about
+   defaults: { _controller: "BlogBundle:Page:about" }
+   requirements:
+        methods:  GET
+
+BlogBundle_contact:
+   path:   /contact
+   defaults: { _controller: "BlogBundle:Page:contact" }
+   requirements:
+        methods:  GET|POST
+
+BlogBundle_blog_show:
+    path:  /{id}/{slug}
+    defaults: { _controller: "BlogBundle:Blog:show" }
+    requirements:
+        methods:  GET
+        id: \d+
+
+BlogBundle_comment_create:
+    path:  /comment/{blog_id}
+    defaults: { _controller: "BlogBundle:Comment:create" }
+    requirements:
+        methods:  POST
+        id: \d+

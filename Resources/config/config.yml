@@ -1,0 +1,4 @@
+# src/BlogBundle/Resources/config/config.yml
+
+parameters:
+    blog.comments.latest_comment_limit: 10
